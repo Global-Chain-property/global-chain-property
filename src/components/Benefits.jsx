@@ -65,7 +65,7 @@ const Benefits = () => {
                 className={`
                   p-6 bg-white rounded-xl border border-gray-100 
                   transition duration-500 ease-in-out
-                  shadow-xl shadow-[#DEC05F]/70 hover:shadow-2xl hover:border-[#DEC05F] 
+                  shadow-xl shadow-[#DEC05F]/30 hover:shadow-2xl hover:border-[#DEC05F] 
                   transform hover:-translate-y-1 
                   animate-fade-in-up
                 `}
