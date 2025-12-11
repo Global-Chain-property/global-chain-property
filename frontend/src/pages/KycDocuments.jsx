@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Upload, Check } from 'lucide-react'; 
 import kycBackground from '../assets/herobg3.jpg';
 import logoImage from '../assets/image1.png'; 
+import { useNavigate } from 'react-router-dom';
 
 
 const NAVY = '#222222';
@@ -13,6 +14,7 @@ const documentTypes = ["Passport", "Driver's License", "National ID"];
 const KycDocuments = () => {
   const [file, setFile] = useState(null);
   const [isConfirmed, setIsConfirmed] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,10 +24,11 @@ const KycDocuments = () => {
     }
     alert("Documents Submitted for Verification!");
     // window.location.href = '/2fa-setup'; // Example navigation to next step (2FA)
+    navigate('/marketplace');
   };
 
 
-  const fileInputRef = useRef(null); // <-- Define the ref
+  const fileInputRef = useRef(null);
 
     // Function to trigger the click on the hidden input
   const triggerFileSelect = () => {

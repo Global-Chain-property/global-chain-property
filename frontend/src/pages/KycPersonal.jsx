@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Check, ArrowRight } from 'lucide-react';
 import kycBackground from '../assets/herobg3.jpg';
 import logoImage from '../assets/image1.png'; 
+import { useNavigate } from 'react-router-dom';
 
 const NAVY = '#222222';
 const GOLD = '#DEC05F'; 
@@ -11,10 +12,12 @@ const kycSteps = ["Personal Information", "Address", "Documents"];
 const KycPersonal = () => {
   const [formData, setFormData] = useState({});
 
+  const navigate = useNavigate();
   const handleNext = (e) => {
     e.preventDefault();
     console.log("Step 1 Data:", formData);
     // window.location.href = '/kyc/address'; // Example navigation
+    navigate('/kycaddress');
   };
   
   const getStepStatus = (index) => {
@@ -112,9 +115,9 @@ const KycPersonal = () => {
                     <label htmlFor="" className='text-gray-700 space-y-4 font-bold '>Date of Birth </label>
                     <input type="date" placeholder="Date of Birth" required className="w-full p-3 border border-gray-300 rounded-lg focus:ring-1 outline-none focus:ring-[#DEC05F] transition" />
                     
-                    <motion.a href='/kycaddress' whileHover={{ scale: 1.02 }} type="submit" className={`w-full bg-[${NAVY}] text-white font-bold py-3 rounded-lg mt-4 flex items-center justify-center space-x-2`}>
+                    <motion.button whileHover={{ scale: 1.02 }} type="submit" className={`w-full bg-[${NAVY}] text-white font-bold py-3 rounded-lg mt-4 flex items-center justify-center space-x-2`}>
                         <span>Next</span> <ArrowRight className="h-5 w-5" />
-                    </motion.a>
+                    </motion.button>
                 </form>
             </div>
           </div>

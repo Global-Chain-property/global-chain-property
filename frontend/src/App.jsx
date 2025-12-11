@@ -8,6 +8,9 @@ import Login from './pages/Login';
 import KycPersonal from './pages/KycPersonal'
 import KycAddress from './pages/KycAddress';
 import KycDocuments from './pages/KycDocuments';
+import Marketplace from './pages/MarketPlace';
+import Dashboard from './pages/Dashboard';
+import Portfolio from './pages/Portfolio';
 
 
 
@@ -22,7 +25,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path='/kycpersonal' element={<KycPersonal />} />
         <Route path='/kycaddress' element={<KycAddress />} />
-        <Route path='/kycdocuments' element={<KycDocuments/>} />
+        <Route path='/kycdocuments' element={<KycDocuments />} />
+        <Route path="/marketplace" element={<Marketplace />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/portfolio" element={<Portfolio />} />
 
       </Routes>
     </Router>
